@@ -50,4 +50,5 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
         return self.email
 
     def get_full_name(self):
-        return f'{self.last_name} {self.first_name} {self.patronymic}'.strip()
+        parts = [self.last_name, self.first_name, self.patronymic]
+        return ' '.join(filter(None, parts))
