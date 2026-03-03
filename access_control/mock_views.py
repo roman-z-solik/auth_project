@@ -2,8 +2,9 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
-from .permissions import HasPermission, IsAdminOrSuperuser
+from .permissions import IsAdminOrSuperuser
 from .decorators import require_permission
+from .utils import get_user_permissions
 
 # Mock данные для демонстрации
 MOCK_DOCUMENTS = [
@@ -20,7 +21,8 @@ MOCK_PROJECTS = [
 
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated, HasPermission('document_view')])
+@permission_classes([IsAuthenticated])
+@require_permission('document_view')
 def get_documents(request):
     return Response({
         'documents': MOCK_DOCUMENTS,
@@ -29,7 +31,8 @@ def get_documents(request):
 
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated, HasPermission('document_create')])
+@permission_classes([IsAuthenticated])
+@require_permission('document_create')
 def create_document(request):
     return Response({
         'message': 'Document created successfully',
@@ -38,7 +41,8 @@ def create_document(request):
 
 
 @api_view(['PUT'])
-@permission_classes([IsAuthenticated, HasPermission('document_update')])
+@permission_classes([IsAuthenticated])
+@require_permission('document_update')
 def update_document(request, doc_id):
     return Response({
         'message': f'Document {doc_id} updated successfully'
@@ -46,7 +50,8 @@ def update_document(request, doc_id):
 
 
 @api_view(['DELETE'])
-@permission_classes([IsAuthenticated, HasPermission('document_delete')])
+@permission_classes([IsAuthenticated])
+@require_permission('document_delete')
 def delete_document(request, doc_id):
     return Response({
         'message': f'Document {doc_id} deleted successfully'
@@ -63,7 +68,8 @@ def get_projects(request):
 
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated, HasPermission('user_view')])
+@permission_classes([IsAuthenticated])
+@require_permission('user_view')
 def get_users_list(request):
     from accounts.models import CustomUser
     users = CustomUser.objects.filter(is_active=True).values('id', 'email', 'first_name', 'last_name')

@@ -52,4 +52,27 @@ class IsAdminOrSuperuser(BasePermission):
 
     def has_object_permission(self, request, view, obj):
         return self.has_permission(request, view)
-    
+
+class CanViewDocument(HasPermission):
+    def __init__(self):
+        super().__init__('document_view')
+
+class CanCreateDocument(HasPermission):
+    def __init__(self):
+        super().__init__('document_create')
+
+class CanUpdateDocument(HasPermission):
+    def __init__(self):
+        super().__init__('document_update')
+
+class CanDeleteDocument(HasPermission):
+    def __init__(self):
+        super().__init__('document_delete')
+
+class CanViewProject(HasPermission):
+    def __init__(self):
+        super().__init__('project_view')
+
+class CanViewUser(HasPermission):
+    def __init__(self):
+        super().__init__('user_view')
