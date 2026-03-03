@@ -1,0 +1,132 @@
+[
+    {
+        "model": "access_control.permission",
+        "pk": 1,
+        "fields": {
+            "codename": "user_view",
+            "description": "Просмотр пользователей",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.permission",
+        "pk": 2,
+        "fields": {
+            "codename": "user_create",
+            "description": "Создание пользователей",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.permission",
+        "pk": 3,
+        "fields": {
+            "codename": "user_update",
+            "description": "Редактирование пользователей",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.permission",
+        "pk": 4,
+        "fields": {
+            "codename": "user_delete",
+            "description": "Удаление пользователей",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.permission",
+        "pk": 5,
+        "fields": {
+            "codename": "role_view",
+            "description": "Просмотр ролей",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.permission",
+        "pk": 6,
+        "fields": {
+            "codename": "role_create",
+            "description": "Создание ролей",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.permission",
+        "pk": 7,
+        "fields": {
+            "codename": "role_update",
+            "description": "Редактирование ролей",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.permission",
+        "pk": 8,
+        "fields": {
+            "codename": "role_delete",
+            "description": "Удаление ролей",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.permission",
+        "pk": 9,
+        "fields": {
+            "codename": "permission_view",
+            "description": "Просмотр разрешений",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.permission",
+        "pk": 10,
+        "fields": {
+            "codename": "permission_assign",
+            "description": "Назначение разрешений",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.role",
+        "pk": 1,
+        "fields": {
+            "name": "Admin",
+            "description": "Полный доступ ко всем ресурсам",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.role",
+        "pk": 2,
+        "fields": {
+            "name": "Manager",
+            "description": "Управление пользователями, просмотр прав",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    },
+    {
+        "model": "access_control.role",
+        "pk": 3,
+        "fields": {
+            "name": "User",
+            "description": "Обычный пользователь",
+            "created_at": "2024-01-01T00:00:00Z",
+            "updated_at": "2024-01-01T00:00:00Z"
+        }
+    }
+]
